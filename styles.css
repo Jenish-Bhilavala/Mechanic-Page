@@ -1,0 +1,256 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .navbar-custom {
+    z-index: 11;
+    background-color: white;
+    height: 60px;
+    position: relative;
+  }
+  .parallelogram {
+    width: 500px;
+    height: 60px;
+    transform: skew(-20deg);
+    background: blue;
+    color: white;
+    margin-left: -20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+  }
+  /* Slide */
+  .carousel {
+    text-align: center;
+  }
+  
+  .carousel-inner .row {
+    justify-content: center;
+  }
+  .hover-card {
+    position: relative;
+  }
+
+  .hover-card img {
+    transition: all 0.3s ease;
+  }
+
+  .hover-card:hover img {
+    filter: blur(0px);
+    transform: scale(1.02);
+  }
+
+  .hover-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.7); /* Light white background */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .hover-card:hover .hover-text {
+    opacity: 1;
+  }
+  
+  .carousel .card {
+    margin: auto;
+  }
+  
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 5%;
+  }
+  
+  @media (max-width: 768px) {
+    .carousel .card {
+      width: 100%;
+    }
+  }
+  /* pro */
+  .product-card {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .product-card img {
+    transition: transform 0.5s ease;
+    width: 100%;
+    height: auto;
+  }
+  
+  .product-card:hover img {
+    transform: scale(1.1);
+  }
+  
+  .product-card .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .product-card:hover .overlay {
+    opacity: 1;
+  }
+  
+  .overlay-text {
+    font-size: 1.2rem;
+    color: #333;
+    text-align: center;
+    font-weight: bold;
+  }
+  /* Faltu */
+  .icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .text-blue i {
+    color: #007bff; /* FontAwesome icon color blue */
+    font-size: 24px;
+  }
+  
+  .icon-text {
+    padding: 15px;
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .icon-text:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .text h5 {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .text p {
+    margin: 0;
+  }
+  
+  @media (max-width: 576px) {
+    .icon-text {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .text {
+      margin-top: 10px;
+    }
+  }
+  /* Ser */
+  .services-section {
+    position: relative;
+    min-height: 400px; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    overflow: hidden; /* Ensure overlay does not exceed the container */
+    background: url('images/Im\ hero\ img.jpg') no-repeat center center; /* Use the image as a background */
+    background-size: cover; /* Cover the entire section */
+  }
+  
+  .services-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.3); /* White overlay with transparency */
+    z-index: 1;
+  }
+  
+  .services-content {
+    position: relative;
+    z-index: 2; /* Ensure content appears above the overlay */
+  }
+  
+  .btn-service {
+    background-color: #007bff; /* Button color */
+    color: #fff; /* Button text color */
+    border: none;
+  }
+  
+  .btn-service:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .services-section {
+      min-height: 300px; /* Reduce height for smaller screens */
+    }
+  }
+  /* vd */
+  .video-slider {
+    position: relative;
+    overflow: hidden;
+    margin: 20px 0;
+  }
+  
+  .video-card {
+    transition: transform 0.5s ease, filter 0.5s ease;
+    position: relative;
+  }
+  
+  .video-card.active {
+    transform: scale(1.2);
+    z-index: 1;
+    filter: none; /* No blur */
+  }
+  
+  .video-card:not(.active) {
+    filter: blur(1px);
+    opacity: 0.7; /* Slightly transparent */
+  }
+  
+  .video-card video {
+    width: 100%; /* Responsive video */
+    border-radius: 10px; /* Optional: for rounded corners */
+  }
+  
+  .carousel-control-prev, .carousel-control-next {
+    width: 5%; /* Adjust width as necessary */
+  }
+  
+  @media (max-width: 768px) {
+    .video-card {
+      display: none; /* Hide all video cards */
+    }
+    .video-card.active {
+      display: block; /* Only show the active video */
+    }
+  }
+  @media (max-width: 992px) {
+    .as {
+      margin-top: 90px;
+    }
+  }
